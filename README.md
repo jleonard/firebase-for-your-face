@@ -1,7 +1,7 @@
 ### Increments
-Implements [distributed counters](https://firebase.google.com/docs/firestore/solutions/counters) (eg. likes, views) across a group of shards in a collection.
+Implements [distributed counters](https://firebase.google.com/docs/firestore/solutions/counters) (eg. likes, views) across a group of shards in a collection. **Note** this is for managing a count at a *collection* level.
 
-*First* configure firebase and create a firestore instance...
+**First** configure firebase and create a firestore instance...
 ```
 require('dotenv').config();
 
@@ -20,13 +20,13 @@ var db = firebase.firestore();
 
 ```
 
-*Next* increment the counter on that collection
+**Next** increment a counter on a collection
 ```
 const firebaseUtil = require('fire-ace-of-base');
 firebaseUtil.increment(db,'collection-name');
 ```
 
-*Optional* define the # of shards (default is 20)
+**Optional** define the # of shards (default is 20)
 ```
 var shardCount = 100;
 const firebaseUtil = require('fire-ace-of-base');
@@ -36,9 +36,9 @@ firebaseUtil.increment(db,'collection-name',shardCount);
 ---
 
 ## Logs
-> For logging an array of events across shard cluster.
+> For maintaining an array of events (eg. session activity) across a collection of shards.
 
-*First* configure firebase and create a firestore instance...
+**First** configure firebase and create a firestore instance...
 ```
 require('dotenv').config();
 
@@ -57,14 +57,14 @@ var db = firebase.firestore();
 
 ```
 
-*Next* log an event to a session inside the sessions collection
+**Next** log an event to a session inside the sessions collection
 ```
 const firebaseUtil = require('fire-ace-of-base');
 var json = {} // any json data you want to append to the 'events' array for the session.
 firebaseUtil.log(db,'sessions','session-unique-id',json);
 ```
 
-*Optional* define the # of shards (default is 5)
+**Optional** define the # of shards (default is 5)
 ```
 var shardCount = 100;
 const firebaseUtil = require('fire-ace-of-base');

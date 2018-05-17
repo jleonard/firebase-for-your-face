@@ -1,6 +1,6 @@
 {
   "name": "firebase-for-your-face",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Some helpful firebase admin utils for managing increments and logs",
   "main": "index.js",
   "scripts": {

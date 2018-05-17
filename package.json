@@ -1,0 +1,19 @@
+{
+  "name": "firebase-for-your-face",
+  "version": "0.0.1",
+  "description": "Some helpful firebase admin utils for managing increments and logs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": "thejohnleonard@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "firebase-admin": "^5.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jleonard/firebase-for-your-face"
+  }
+}
